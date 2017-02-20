@@ -9,7 +9,6 @@ image_resource:
 inputs:
   - name: git-repo
   - name: gradle-project
-  - name: db
 outputs:
   - name: out
 
