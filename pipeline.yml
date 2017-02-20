@@ -1,0 +1,37 @@
+---
+# Gradle Resourse
+resources:
+- name: git-repo
+  type: git
+  source:
+    uri: https://github.com/ababup1192/concourse-gradle.git
+
+- name: gradle-project
+  type: git
+  source:
+    uri: https://github.com/ababup1192/hello-gradle.git
+
+- name: report
+  type: git
+  source:
+    uri: git@github.com:ababup1192/hello-gradle-report.git
+    private_key: {{github-private-key}}
+    branch: master
+
+jobs:
+- name: gradle-ci
+  public: true
+  plan:
+  - get: gradle-project
+    trigger: true
+  - get: git-repo
+  - get: report
+  - task: gradle-test
+    file: git-repo/gradle-test.yml
+    ensure:
+      do:
+        - task: commit-report
+          file: git-repo/commit-report.yml
+        - put: report
+          params:
+            repository: updated-report

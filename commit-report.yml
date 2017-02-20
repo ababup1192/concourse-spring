@@ -1,0 +1,15 @@
+---
+platform: linux
+image_resource:
+  type: docker-image
+  source:
+    repository: getourneau/alpine-bash-git
+inputs:
+  - name: git-repo
+  - name: out
+  - name: report
+outputs:
+  - name: updated-report
+run:
+  path: ./git-repo/commit-report.sh
+
