@@ -20,5 +20,6 @@ run:
       source /docker-lib.sh
       cd git-repo
       start_docker
+      docker-compose up
       docker ps
       docker-compose version
