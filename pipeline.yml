@@ -18,6 +18,11 @@ resources:
     private_key: {{github-private-key}}
     branch: master
 
+- name: db
+  type: docker-image
+  source:
+    repository: "mysql:5.7.17"
+
 jobs:
 - name: gradle-ci
   public: true
@@ -26,6 +31,7 @@ jobs:
     trigger: true
   - get: git-repo
   - get: report
+  - get: db
   - task: gradle-test
     file: git-repo/gradle-test.yml
     ensure:

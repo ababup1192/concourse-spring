@@ -1,6 +1,7 @@
 #!/bin/bash
 cd gradle-project
 
+mysql
 gradle test
 status=$(echo $?)
 
