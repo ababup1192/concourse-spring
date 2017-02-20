@@ -1,0 +1,14 @@
+gradle:
+  image: frekele/gradle
+  links:
+    - db
+
+db:
+  image: mysql:5.7.17
+  environment:
+    - MYSQL_ROOT_PASSWORD=root
+    - MYSQL_DATABASE=test
+    - MYSQL_USER=user
+    - MYSQL_PASSWORD=pass
+  volumes:
+    - ./mysql:/var/lib/mysql
