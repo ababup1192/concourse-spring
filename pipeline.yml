@@ -27,6 +27,8 @@ jobs:
   - get: git-repo
   - get: report
   - task: gradle-test
+    timeout: 20m
+    privileged: true
     file: git-repo/gradle-test.yml
     ensure:
       do:
