@@ -18,6 +18,7 @@ run:
     - -exc
     - |
       source /docker-lib.sh
+      cd git-repo
       start_docker
       docker ps
       docker-compose version
