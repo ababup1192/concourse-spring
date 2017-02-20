@@ -4,17 +4,17 @@ resources:
 - name: git-repo
   type: git
   source:
-    uri: https://github.com/ababup1192/concourse-gradle.git
+    uri: https://github.com/ababup1192/concourse-spring.git
 
 - name: gradle-project
   type: git
   source:
-    uri: https://github.com/ababup1192/hello-gradle.git
+    uri: https://github.com/ababup1192/SpringMigrator.git
 
 - name: report
   type: git
   source:
-    uri: git@github.com:ababup1192/hello-gradle-report.git
+    uri: git@github.com:ababup1192/hello-spring-report.git
     private_key: {{github-private-key}}
     branch: master
 
