@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 source /docker-lib.sh
 start_docker
