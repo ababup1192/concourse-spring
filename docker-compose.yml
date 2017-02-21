@@ -2,6 +2,8 @@ gradle:
   image: frekele/gradle
   links:
     - db
+  volumes:
+    - ./project:/tmp/project
 
 db:
   image: mysql:5.7.17
