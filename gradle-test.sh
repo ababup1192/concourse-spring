@@ -1,9 +1,11 @@
 #!/bin/bash
-cd gradle-project
 
-gradle test
-status=$(echo $?)
+source /docker-lib.sh
+start_docker
+cp -r gradle-project git-repo/project
+cd git-repo
+docker-compose run gradle sh -c "cd /tmp/project && gradle test" ; \
+    cp -r project/build ../out
+# status=$(echo $?)
+# exit $status
 
-cp -r build ../out
-
-exit $status
