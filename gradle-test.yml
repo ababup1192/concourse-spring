@@ -4,7 +4,7 @@ platform: linux
 image_resource:
   type: docker-image
   source:
-    repository: frekele/gradle
+    repository: mumoshu/dcind
 
 inputs:
   - name: git-repo
@@ -13,4 +13,14 @@ outputs:
   - name: out
 
 run:
-  path: ./git-repo/gradle-test.sh
+  path: sh
+  args:
+    - -exc
+    - |
+       source /docker-lib.sh
+       start_docker
+       mv gradle-project git-repo/project
+       cd git-repo
+       docker-compose run gradle sh -c "cd /tmp/project && gradle test"
+       mv project/build ../out
+
