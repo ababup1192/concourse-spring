@@ -11,7 +11,7 @@ inputs:
   - name: gradle-project
 outputs:
   - name: out
-    path: /git-repo/project/build
+    path: /git-repo/project
 
 run:
   path: ./git-repo/gradle-test.sh
