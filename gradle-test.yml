@@ -17,10 +17,10 @@ run:
   args:
     - -exc
     - |
-      mv gradle-project git-repo/project
+       cp gradle-project git-repo/project
        cd git-repo
        source /docker-lib.sh
        start_docker
        docker-compose run gradle sh -c "cd /tmp/project && gradle test"
-       mv project/build ../out
+       cp project/build ../out
 
