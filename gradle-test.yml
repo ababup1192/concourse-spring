@@ -10,7 +10,7 @@ inputs:
   - name: git-repo
   - name: gradle-project
 outputs:
-  - name: out
+  - name: out/hoge
 
 run:
   path: ./git-repo/gradle-test.sh
