@@ -19,7 +19,7 @@ resources:
     branch: master
 
 jobs:
-- name: gradle-ci
+- name: spring-ci
   public: true
   plan:
   - aggregate:
