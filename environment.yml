@@ -1,0 +1,6 @@
+---
+# This Concourse Repository
+git-repo: https://github.com/ababup1192/concourse-gradle.git
+# Test Target (Gradle Project)
+target-uri: https://github.com/ababup1192/SpringMigrator.git
+report-uri: git@github.com:ababup1192/hello-spring-report.git

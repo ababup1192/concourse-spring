@@ -4,17 +4,17 @@ resources:
 - name: git-repo
   type: git
   source:
-    uri: https://github.com/ababup1192/concourse-spring.git
+    uri: {{git-repo}}
 
 - name: gradle-project
   type: git
   source:
-    uri: https://github.com/ababup1192/SpringMigrator.git
+    uri: {{target-uri}}
 
 - name: report
   type: git
   source:
-    uri: git@github.com:ababup1192/hello-spring-report.git
+    uri: {{report-uri}}
     private_key: {{github-private-key}}
     branch: master
 
@@ -38,3 +38,5 @@ jobs:
         - put: report
           params:
             repository: updated-report
+        - task: slack-notice
+          file: git-repo/slack-notice.yml

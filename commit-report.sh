@@ -4,6 +4,7 @@ git clone report updated-report
 
 cd updated-report/
 
+cp -a ../out/java/* ./
 cp -a ../out/build/reports ../out/build/test-results ./
 
 git config --global user.email "ababup1192@gmail.com"
